@@ -20,23 +20,41 @@
 ## Install Django
 - `python3 -m django --version` to confirm no django installed (or check version)
   - [remove django](https://docs.djangoproject.com/en/1.11/topics/install/#removing-old-versions-of-django) if you have an out of date version
-- [install database](https://docs.djangoproject.com/en/1.11/topics/install/#database-installation), if not SQLite, but tutorial uses SQLite
 - install pip
   - `sudo apt-get update --fix-missing` 
   - `sudo apt install python3-pip` to install pip
-  - `pip3 install --upgrade pip` to upgrade pip
+  - `pip3 install --upgrade pip` to upgrade pip (I did this twice)
 - setup [virtualenv](https://virtualenv.pypa.io/en/stable/)
   - `sudo pip3 install virtualenv` to install virtualenv
   - `cd /vagrant`
   - `virtualenv ENV` to create a new virtual environment in directory ENV
   - `source ENV/bin/activate` to activate virtual env
+- [install database](https://docs.djangoproject.com/en/1.11/topics/install/#database-installation)
+  - `pip install psycopg2` - to install the PostgreSQL adapter for Python
+  - I then got confused & found & decided to follow [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-16-04):
+    - `sudo apt-get update`
+    - `sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib`
+    - `sudo -u postgres psql` to log into a Postgres session as username postgres
+    - `CREATE DATABASE homepointr;` to create the homepointr database
+    - `CREATE USER Martin WITH PASSWORD '1P';`
+    - `ALTER ROLE Martin SET client_encoding TO 'utf8';`
+    - `ALTER ROLE Martin SET default_transaction_isolation TO 'read committed';`
+    - `ALTER ROLE Martin SET timezone TO 'UTC';`
+    - `GRANT ALL PRIVILEGES ON DATABASE homepointr TO Martin;`
+    - `\q` to exit SQL prompt
+    - `mkdir homepointr`
+    - `cd homepointr`
 - `pip install Django` to install Django
 - `python -m django --version` to check installed version - I have 1.11.4
   
 ## Set up Django project
-- `django-admin startproject mysite` to create django settings, database configuration & file structure
+- `django-admin startproject homepointr` to create django settings, database configuration & file structure
+
+## Configure Django Database settings
+- 
+
 - check project working
-  - `cd /vagrant/mysite`
+  - `cd /vagrant/homepointr`
   - `python manage.py runserver 0.0.0.0:8000` to run lightweight **non-production** development server - [here's why 0.0.0.0.:8000](https://stackoverflow.com/questions/33129651/access-web-server-on-virtualbox-vagrant-machine-from-host-browser)
   - Check 'It worked!' at [localhost:8000](http://localhost:8000/)
   
