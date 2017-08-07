@@ -12,7 +12,7 @@
     - uncomment `# config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 `
     - change ports `80` and `8080` to `8000` as that's what the django development server uses
-    - so you now have `config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1`
+    - so you now have `config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1"`
   - `vagrant up` if first time or `vagrant reload` to load the new vagrant file
   - `vagrant box update` to get latest version
   - `vagrant ssh` to SSH into your new box
