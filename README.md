@@ -1,12 +1,11 @@
-# djangoTut setup
+# Django Postgres Test
+
+# Setup
 
 ## Setup vagrant box
 - Pick box from [Vagrant](https://app.vagrantup.com/boxes/)
 - I chose [ubuntu/xenial64](https://app.vagrantup.com/ubuntu/boxes/xenial64)
-  - create new folder, I called mine `djangoTut`
-  - I added the path to djangoTut as an alias called djangoTut by:
-    - nano .bash_profile
-    - add the line: `alias djangoTut='cd "/Users/PATH_TO_YOUR_DJANGOTUT_FOLDER"'
+  - create new folder, I called mine `DjangoPostgres`
   - navigate to new folder in terminal
   - `vagrant init ubuntu/xenial64`
   - edit vagrant file
