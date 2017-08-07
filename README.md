@@ -42,8 +42,6 @@
     - `ALTER ROLE Martin SET timezone TO 'UTC';`
     - `GRANT ALL PRIVILEGES ON DATABASE homepointr TO Martin;`
     - `\q` to exit SQL prompt
-    - `mkdir homepointr`
-    - `cd homepointr`
 - `pip install Django` to install Django
 - `python -m django --version` to check installed version - I have 1.11.4
   
@@ -51,7 +49,23 @@
 - `django-admin startproject homepointr` to create django settings, database configuration & file structure
 
 ## Configure Django Database settings
-- 
+- edit `DATABASES` in `homepointr/homepointr/settings.py` to:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'homepointr',
+        'USER': 'Martin',
+        'PASSWORD': 'G338Y623;pZZB.;.{)aR',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+```
+- and `ALLOWED_HOSTS` to `ALLOWED_HOSTS = ['localhost', '35.176.170.23']` where 
+35.176.170.23 is my final server IP
+
+
 
 - check project working
   - `cd /vagrant/homepointr`
