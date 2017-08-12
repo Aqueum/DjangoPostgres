@@ -25,7 +25,7 @@
   - `sudo apt install python3-pip` to install pip
   - `pip3 install --upgrade pip` to upgrade pip (I did this twice)
 - setup [virtualenv](https://virtualenv.pypa.io/en/stable/)
-  - `sudo pip3 install virtualenv` to install virtualenv
+  - `sudo -H pip3 install virtualenv` to install virtualenv
   - `cd /vagrant`
   - `virtualenv ENV` to create a new virtual environment in directory ENV
   - `source ENV/bin/activate` to activate virtual env
