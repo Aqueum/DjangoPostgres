@@ -749,12 +749,12 @@ recursive-include docs *
 
 
 # To launch
-- in terminal `djangoTut` or navigate to the folder with your vm
+- in terminal navigate to the folder with your vm
 - `./rds1` (a bash script I set up to do the following)
   - `vagrant up`
   - `vagrant ssh`
 - `/vagrant/rds2` (a bash script I set up to do the following)
-  - `cd /vagrant/mysite`
+  - `cd /vagrant/homepointr`
   - `source ../ENV/bin/activate`
   - `python manage.py runserver 0:8000`
 - [localhost:8000/polls](http://localhost:8000/polls)
