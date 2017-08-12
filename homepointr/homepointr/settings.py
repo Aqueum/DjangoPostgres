@@ -25,7 +25,7 @@ SECRET_KEY = 'voa4@9%pr_q33&nahxmka!vw+4fq29m%q0dcx!z@((mr&aaxd%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS to ALLOWED_HOSTS = ['localhost', '35.176.170.23']
 
 
 # Application definition
